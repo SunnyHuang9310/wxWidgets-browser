@@ -191,29 +191,33 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	
 	void MyFrame::OnButton(wxCommandEvent& event)
 	{
-		 mwebview->GoBack();
+		mwebview->GoBack();
 	}
+	
 	void MyFrame::OnButton1(wxCommandEvent& event)
 	{
-	mwebview->GoForward();
+		mwebview->GoForward();
 	}
 
 
 	void MyFrame::OnText(wxCommandEvent& event)
 	{
 		s = text->GetValue();
-   mwebview->LoadURL(s);
+   		mwebview->LoadURL(s);
 	}
+	
 	void MyFrame::OnOpen(wxCommandEvent& event)
 	{
 		wxFileDialog	mopenFile(this,wxT("文件管理器"),wxT(""),wxT(""),"*.*|*",wxFD_OPEN | wxFD_FILE_MUST_EXIST);
 		mopenFile.ShowModal();
-		}
-		void MyFrame::OnPreview(wxCommandEvent& event)	
-		{
+	}
+	
+	void MyFrame::OnPreview(wxCommandEvent& event)	
+	{
 			
 	}
-    void MyFrame::OnNewTab(wxCommandEvent& event)
+	
+    	void MyFrame::OnNewTab(wxCommandEvent& event)
 	{
 		wxDialog *mDialog = new wxDialog(this,71,wxT("留云榭"),wxPoint(50,50),wxSize(1024,768));
 		mDialog->Show();
@@ -244,10 +248,10 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	{
 		mwebview->LoadURL(event.GetURL());
 	}
-void MyFrame::OnExit(wxCommandEvent& event)
-{
-    Close(true);
-}
+	void MyFrame::OnExit(wxCommandEvent& event)
+	{
+	    Close(true);
+	}
 	wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
 	EVT_BUTTON(wxID_OK,MyFrame::OnButton)
 	EVT_BUTTON(70,MyFrame::OnButton1)
