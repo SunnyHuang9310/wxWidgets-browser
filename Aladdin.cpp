@@ -190,9 +190,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	}
 	
 	void MyFrame::OnButton(wxCommandEvent& event)
-{
-   mwebview->GoBack();
-}
+	{
+		 mwebview->GoBack();
+	}
 	void MyFrame::OnButton1(wxCommandEvent& event)
 	{
 	mwebview->GoForward();
@@ -203,7 +203,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 	{
 		s = text->GetValue();
    mwebview->LoadURL(s);
-		}
+	}
 	void MyFrame::OnOpen(wxCommandEvent& event)
 	{
 		wxFileDialog	mopenFile(this,wxT("文件管理器"),wxT(""),wxT(""),"*.*|*",wxFD_OPEN | wxFD_FILE_MUST_EXIST);
@@ -212,25 +212,25 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 		void MyFrame::OnPreview(wxCommandEvent& event)	
 		{
 			
-    }
+	}
     void MyFrame::OnNewTab(wxCommandEvent& event)
-    {
+	{
 		wxDialog *mDialog = new wxDialog(this,71,wxT("留云榭"),wxPoint(50,50),wxSize(1024,768));
 		mDialog->Show();
-		}
+	}
     
 	void MyFrame::OnAbout(wxCommandEvent& event)
 	{
 		wxDialog *mDialog = new wxDialog(this,90,wxT("留云榭软件科技有限公司"),wxDefaultPosition,wxSize(320,480));
 		mDialog->Show();
-		}
+	}
 	void MyFrame::OnFind(wxCommandEvent& event)
 	{
 		wxFindReplaceData *mFindData;
 		wxFindReplaceDialog *mFind;
 		
 		mFind->Create(this,mFindData,wxT("搜索"));
-		}	
+	}	
 	bool MyApp::OnInit()
 	{
 		MyFrame *frame = new MyFrame(wxT("东莞留云榭软件科技有限公司"), wxPoint(50,50),wxSize(1024,768));
@@ -238,12 +238,12 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size)
 		frame->CreateStatusBar(1,wxSTB_DEFAULT_STYLE);
 		frame->Show(true);
 		return true;
-		}
+	}
 
 	void MyFrame::Onwebview(wxWebViewEvent& event)
 	{
 		mwebview->LoadURL(event.GetURL());
-		}
+	}
 void MyFrame::OnExit(wxCommandEvent& event)
 {
     Close(true);
